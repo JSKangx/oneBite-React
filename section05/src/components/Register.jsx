@@ -10,53 +10,32 @@ import { useState } from 'react';
 const Register = () => {
   const [input, setInput] = useState({ name: '', birth: '', country: '', bio: '' });
 
-  console.log(input);
-
-  // 입력값이 변경될 때마다 변경된값을 name 변수에 저장
-  const onChangeName = (e) => {
+  const onChange = (e) => {
     setInput({
-      // name이 아닌 다른 속성들을 그대로 복사해와서 유지시키도록 하고
       ...input,
-      name: e.target.value, // 이 함수에서는 name값만 업데이트
-    });
-  };
-
-  const onChangeBirth = (e) => {
-    setInput({
-      // name이 아닌 다른 속성들을 그대로 복사해와서 유지시키도록 하고
-      ...input,
-      birth: e.target.value, // 이 함수에서는 name값만 업데이트
-    });
-  };
-
-  const onChangeCountry = (e) => {
-    setInput({
-      // name이 아닌 다른 속성들을 그대로 복사해와서 유지시키도록 하고
-      ...input,
-      country: e.target.value, // 이 함수에서는 name값만 업데이트
-    });
-  };
-
-  const onChangeBio = (e) => {
-    setInput({
-      // name이 아닌 다른 속성들을 그대로 복사해와서 유지시키도록 하고
-      ...input,
-      bio: e.target.value, // 이 함수에서는 name값만 업데이트
+      //
+      [e.target.name]: e.target.value,
     });
   };
 
   return (
     <div>
       <div>
-        <input value={input.name} type='text' onChange={onChangeName} placeholder={'이름'} />
+        <input
+          name='name'
+          value={input.name}
+          type='text'
+          onChange={onChange}
+          placeholder={'이름'}
+        />
       </div>
 
       <div>
-        <input value={input.birth} type='date' onChange={onChangeBirth} />
+        <input name='birth' value={input.birth} type='date' onChange={onChange} />
       </div>
 
       <div>
-        <select value={input.country} onChange={onChangeCountry}>
+        <select name='country' value={input.country} onChange={onChange}>
           <option></option>
           <option value='kr'>한국</option>
           <option value='us'>미국</option>
@@ -65,7 +44,7 @@ const Register = () => {
       </div>
 
       <div>
-        <textarea value={input.bio} onChange={onChangeBio}></textarea>
+        <textarea name='bio' value={input.bio} onChange={onChange}></textarea>
       </div>
     </div>
   );

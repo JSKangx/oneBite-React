@@ -22,6 +22,7 @@ export default [
       react,
       "react-hooks": reactHooks,
       "react-refresh": reactRefresh,
+      prettier
     },
     rules: {
       ...js.configs.recommended.rules,
@@ -33,5 +34,10 @@ export default [
       "no-unused-vars": "off",
       "react/prop-types": "off",
     },
+    extends: [
+    "eslint:recommended", // 기본 ESLint 권장 규칙
+    "plugin:react/recommended", // 리액트 권장 규칙
+    "plugin:prettier/recommended", // Prettier 관련 규칙 및 충돌 해결
+    ]
   },
 ];

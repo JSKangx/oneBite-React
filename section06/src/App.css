@@ -1,9 +1,11 @@
 .wrapper {
-  width: 500px;
+  max-width: 500px;
   margin: 0 auto;
 }
 
 .box {
   padding: 20px;
-  background-color: lightgray;
+  background-color: rgba(211, 211, 211, 0.408);
+  margin-bottom: 10px;
+  border-radius: 10px;
 }

@@ -3,7 +3,7 @@ const Button = ({ num, changeCount }) => {
     changeCount(num);
   }
 
-  return <button onClick={handleCount}>{num}</button>;
+  return <button onClick={handleCount}>{num < 0 ? num : `+${num}`}</button>;
 };
 
 export default Button;

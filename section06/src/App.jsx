@@ -12,8 +12,12 @@ function App() {
   return (
     <div className="wrapper">
       <h1>Simple Counter</h1>
-      <Viewer className="box" count={count} />
-      <Counter className="box" changeCount={changeCount} />
+      <section className="box">
+        <Viewer count={count} />
+      </section>
+      <section className="box">
+        <Counter changeCount={changeCount} />
+      </section>
     </div>
   );
 }

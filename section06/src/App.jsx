@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import Counter from "./components/Counter";
+import Controller from "./components/Controller";
 import Viewer from "./components/Viewer";
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
         <Viewer count={count} />
       </section>
       <section className="box">
-        <Counter changeCount={changeCount} />
+        <Controller changeCount={changeCount} />
       </section>
     </div>
   );

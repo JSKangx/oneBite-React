@@ -1,6 +1,6 @@
 import Button from "./button";
 
-const Counter = ({ changeCount }) => {
+const Controller = ({ changeCount }) => {
   const numbers = [-100, -10, -1, 1, 10, 100];
 
   return (
@@ -12,4 +12,4 @@ const Counter = ({ changeCount }) => {
   );
 };
 
-export default Counter;
+export default Controller;

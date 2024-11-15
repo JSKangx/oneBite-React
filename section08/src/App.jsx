@@ -31,7 +31,7 @@ function App() {
     <>
       <Header formattedDate={formattedDate} />
       <TodoInput addItem={addItem} />
-      <Main itemList={itemList} />
+      <Main itemList={itemList} date={date} />
     </>
   );
 }

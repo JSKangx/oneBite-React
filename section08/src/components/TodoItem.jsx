@@ -1,11 +1,17 @@
-const TodoItem = ({ item }) => {
-  console.log(item);
+import DeleteButton from "./DeleteButton";
+
+const TodoItem = ({ item, date }) => {
+  const itemTime = date.toLocaleString("ko-KR", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  });
   return (
     <div>
       <input type="checkbox" />
-      <p>{item.title}</p>
-      <p>{item.time}</p>
-      <button>삭제</button>
+      <span>{item.title}</span>
+      <span>{itemTime}</span>
+      <DeleteButton />
     </div>
   );
 };

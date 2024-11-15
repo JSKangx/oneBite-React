@@ -28,11 +28,16 @@ function App() {
     ]);
   };
 
+  const deleteItem = (id) => {
+    setItemList((prevList) => prevList.filter((item) => item.id !== id));
+    console.log(id);
+  };
+
   return (
     <>
       <Header formattedDate={formattedDate} />
       <TodoInput addItem={addItem} />
-      <Main itemList={itemList} date={date} />
+      <Main itemList={itemList} date={date} deleteItem={deleteItem} />
     </>
   );
 }

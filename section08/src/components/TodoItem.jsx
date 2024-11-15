@@ -1,6 +1,6 @@
 import DeleteButton from "./DeleteButton";
 
-const TodoItem = ({ item, date }) => {
+const TodoItem = ({ item, date, deleteItem }) => {
   const itemTime = date.toLocaleString("ko-KR", {
     year: "numeric",
     month: "2-digit",
@@ -11,7 +11,7 @@ const TodoItem = ({ item, date }) => {
       <input type="checkbox" />
       <span>{item.title}</span>
       <span>{itemTime}</span>
-      <DeleteButton />
+      <DeleteButton deleteItem={deleteItem} item={item} />
     </div>
   );
 };

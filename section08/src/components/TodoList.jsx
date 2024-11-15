@@ -1,15 +1,17 @@
 import TodoItem from "./TodoItem";
 
-const TodoList = ({ itemList, date, deleteItem }) => {
-  console.log(itemList);
-
+const TodoList = ({ itemList, date, deleteItem, searchInput }) => {
   return (
     <ul>
-      {itemList.map((item) => (
-        <li key={item.id}>
-          <TodoItem item={item} date={date} deleteItem={deleteItem} />
-        </li>
-      ))}
+      {itemList
+        .filter((item) =>
+          item.title.toLowerCase().includes(searchInput.trim().toLowerCase())
+        )
+        .map((item) => (
+          <li key={item.id}>
+            <TodoItem item={item} date={date} deleteItem={deleteItem} />
+          </li>
+        ))}
     </ul>
   );
 };

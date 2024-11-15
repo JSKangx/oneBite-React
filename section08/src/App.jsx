@@ -30,7 +30,6 @@ function App() {
 
   const deleteItem = (id) => {
     setItemList((prevList) => prevList.filter((item) => item.id !== id));
-    console.log(id);
   };
 
   return (

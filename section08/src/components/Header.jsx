@@ -1,7 +1,4 @@
-const Header = () => {
-  const date = new Date();
-  const formattedDate = date.toDateString();
-
+const Header = ({ formattedDate }) => {
   return (
     <div>
       <h3>오늘은</h3>

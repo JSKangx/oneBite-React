@@ -1,11 +1,11 @@
 import TodoList from "./TodoList";
 
-const Main = () => {
+const Main = ({ itemList }) => {
   return (
     <div>
       <h4>Todo List</h4>
       <input type="text" />
-      <TodoList />
+      <TodoList itemList={itemList} />
     </div>
   );
 };

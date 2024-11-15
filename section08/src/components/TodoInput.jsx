@@ -17,8 +17,11 @@ const TodoInput = ({ addItem }) => {
     }
   };
 
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter") getInput();
+  const handleKeyUp = (e) => {
+    if (e.key === "Enter" && input.trim().length !== 0) {
+      e.preventDefault();
+      getInput();
+    }
   };
 
   return (
@@ -29,7 +32,7 @@ const TodoInput = ({ addItem }) => {
         onChange={handleInput}
         type="text"
         placeholder="새로운 Todo..."
-        onKeyDown={handleKeyDown}
+        onKeyUp={handleKeyUp}
       />
       <AddButton onClick={getInput} />
     </div>

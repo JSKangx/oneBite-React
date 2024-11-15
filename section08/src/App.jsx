@@ -15,17 +15,18 @@ function App() {
   ]);
 
   const addItem = (input) => {
-    setItemList([
-      ...itemList,
+    setItemList((prevList) => [
+      ...prevList,
       {
-        id: parseInt(itemList[itemList.length - 1].id) + 1,
+        id:
+          prevList.length > 0
+            ? parseInt(prevList[prevList.length - 1].id) + 1
+            : 1,
         title: input,
         time: formattedDate,
       },
     ]);
   };
-
-  console.log(itemList);
 
   return (
     <>

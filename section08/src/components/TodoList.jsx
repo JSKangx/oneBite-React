@@ -8,7 +8,7 @@ const TodoList = ({ itemList, date, deleteItem, searchInput }) => {
           item.title.toLowerCase().includes(searchInput.trim().toLowerCase())
         )
         .map((item) => (
-          <li key={item.id}>
+          <li key={item.id} className="py-4 border-b-[1px]">
             <TodoItem item={item} date={date} deleteItem={deleteItem} />
           </li>
         ))}

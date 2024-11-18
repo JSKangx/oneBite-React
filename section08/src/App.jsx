@@ -33,11 +33,11 @@ function App() {
   };
 
   return (
-    <>
+    <div className="max-w-[480px] my-0 mx-auto">
       <Header formattedDate={formattedDate} />
       <TodoInput addItem={addItem} />
       <Main itemList={itemList} date={date} deleteItem={deleteItem} />
-    </>
+    </div>
   );
 }
 

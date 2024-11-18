@@ -25,7 +25,7 @@ const TodoInput = ({ addItem }) => {
   };
 
   return (
-    <div>
+    <div className="flex mb-4">
       <input
         ref={inputRef}
         value={input}
@@ -33,6 +33,7 @@ const TodoInput = ({ addItem }) => {
         type="text"
         placeholder="새로운 Todo..."
         onKeyUp={handleKeyUp}
+        className="ring-1 ring-gray-200 px-3 py-2 mr-2 flex-grow rounded-md placeholder:text-sm"
       />
       <AddButton onClick={getInput} />
     </div>

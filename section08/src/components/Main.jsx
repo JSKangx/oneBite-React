@@ -1,7 +1,7 @@
 import { useState } from "react";
 import TodoList from "./TodoList";
 
-const Main = ({ itemList, date, deleteItem }) => {
+const Main = ({ itemList, deleteItem, onUpdate }) => {
   const [searchInput, setSearchInput] = useState("");
   const handleSearchInput = (e) => {
     setSearchInput(e.target.value);
@@ -9,7 +9,7 @@ const Main = ({ itemList, date, deleteItem }) => {
 
   return (
     <div className="flex flex-col">
-      <h4 className="mb-6 font-semibold">Todo List</h4>
+      <h4 className="mb-6 font-semibold">Todo List 🍃</h4>
       <input
         type="text"
         value={searchInput}
@@ -19,9 +19,9 @@ const Main = ({ itemList, date, deleteItem }) => {
       />
       <TodoList
         itemList={itemList}
-        date={date}
         deleteItem={deleteItem}
         searchInput={searchInput}
+        onUpdate={onUpdate}
       />
     </div>
   );

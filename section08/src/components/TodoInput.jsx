@@ -10,11 +10,13 @@ const TodoInput = ({ addItem }) => {
   };
 
   const getInput = () => {
-    if (input.trim().length !== 0) {
-      addItem(input); // App 컴포넌트의 아이템 추가 함수 입력 예정
-      setInput("");
+    if (input.trim() === "") {
       inputRef.current.focus();
+      return;
     }
+    addItem(input); // App 컴포넌트의 아이템 추가 함수 입력 예정
+    setInput("");
+    inputRef.current.focus();
   };
 
   const handleKeyUp = (e) => {

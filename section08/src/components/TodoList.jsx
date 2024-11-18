@@ -1,6 +1,6 @@
 import TodoItem from "./TodoItem";
 
-const TodoList = ({ itemList, date, deleteItem, searchInput }) => {
+const TodoList = ({ itemList, deleteItem, searchInput, onUpdate }) => {
   return (
     <ul>
       {itemList
@@ -9,7 +9,7 @@ const TodoList = ({ itemList, date, deleteItem, searchInput }) => {
         )
         .map((item) => (
           <li key={item.id} className="py-4 border-b-[1px]">
-            <TodoItem item={item} date={date} deleteItem={deleteItem} />
+            <TodoItem item={item} deleteItem={deleteItem} onUpdate={onUpdate} />
           </li>
         ))}
     </ul>

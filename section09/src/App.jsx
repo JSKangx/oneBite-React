@@ -1,4 +1,4 @@
-import { useRef, useState, useReducer } from "react";
+import { useRef, useReducer } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import TodoInput from "./components/TodoInput";

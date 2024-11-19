@@ -1,4 +1,4 @@
-import { useRef, useReducer } from "react";
+import { useRef, useReducer, useCallback } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import TodoInput from "./components/TodoInput";
@@ -41,7 +41,7 @@ function App() {
   const [itemList, dispatch] = useReducer(reducer, DUMMY);
   const idRef = useRef(4);
 
-  const addItem = (input) => {
+  const addItem = useCallback((input) => {
     dispatch({
       type: "CREATE",
       data: {
@@ -51,22 +51,22 @@ function App() {
         date: new Date().getTime(),
       },
     });
-  };
+  }, []);
 
   // itemList.id 중에 매개변수로 받은 id와 일치하는 item의 completed 속성을 토글
-  const onUpdate = (targetId) => {
+  const onUpdate = useCallback((targetId) => {
     dispatch({
       type: "UPDATE",
       targetId: targetId,
     });
-  };
+  }, []);
 
-  const deleteItem = (targetId) => {
+  const deleteItem = useCallback((targetId) => {
     dispatch({
       type: "DELETE",
       targetId: targetId,
     });
-  };
+  }, []);
 
   return (
     <>

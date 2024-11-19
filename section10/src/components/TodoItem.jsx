@@ -1,3 +1,4 @@
+import { memo } from "react";
 import DeleteButton from "./DeleteButton";
 
 const TodoItem = ({ item, deleteItem, onUpdate }) => {
@@ -21,4 +22,16 @@ const TodoItem = ({ item, deleteItem, onUpdate }) => {
   );
 };
 
-export default TodoItem;
+// export default memo(TodoItem, (prevProps, nextProps) => {
+//   // 반환값에 따라 props가 바뀌었는지를 판단
+//   // true : props 바뀌지 않음 -> 리렌더링 X
+//   // false : props 바뀜 -> 리렌더링 O
+//   if (prevProps.item.id !== nextProps.item.id) return false;
+//   if (prevProps.item.completed !== nextProps.item.completed) return false;
+//   if (prevProps.item.title !== nextProps.item.title) return false;
+//   if (prevProps.item.date !== nextProps.item.date) return false;
+
+//   return true;
+// });
+
+export default memo(TodoItem);

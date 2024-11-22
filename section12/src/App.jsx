@@ -4,7 +4,7 @@ import Diary from "./pages/Diary";
 import Home from "./pages/Home";
 import New from "./pages/New";
 import NotFound from "./pages/NotFound";
-
+import { getEmotionImage } from "./util/get-emotion-image";
 /*
   페이지 나누기
   1. "/" : 모든 일기를 조회하는 Home 페이지
@@ -21,6 +21,13 @@ function App() {
   return (
     <>
       <div>
+        <img src={getEmotionImage(1)} />
+        <img src={getEmotionImage(2)} />
+        <img src={getEmotionImage(3)} />
+        <img src={getEmotionImage(4)} />
+        <img src={getEmotionImage(5)} />
+      </div>
+      <div>
         <Link to={"/"}>Home</Link>
         <Link to={"/new"}>New</Link>
         <Link to={"/diary"}>Diary</Link>
@@ -30,7 +37,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/new" element={<New />} />
-        <Route path="/diary" element={<Diary />} />
+        <Route path="/diary/:id" element={<Diary />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import Button from "./Button";
 import "./Header.css";
 
 function Header({ title, leftChild, rightChild }) {
@@ -17,6 +16,7 @@ function Header({ title, leftChild, rightChild }) {
 Header.propTypes = {
   title: PropTypes.string.isRequired,
   leftChild: PropTypes.node.isRequired,
+  rightChild: PropTypes.node.isRequired,
 };
 
 export default Header;

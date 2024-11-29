@@ -13,8 +13,8 @@ function Button({ text, type, onClick }) {
 
 Button.propTypes = {
   text: PropTypes.string,
-  type: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
+  type: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
 export default Button;

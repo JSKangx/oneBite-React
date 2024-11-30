@@ -15,8 +15,8 @@ function Header({ title, leftChild, rightChild }) {
 
 Header.propTypes = {
   title: PropTypes.string.isRequired,
-  leftChild: PropTypes.node.isRequired,
-  rightChild: PropTypes.node.isRequired,
+  leftChild: PropTypes.node,
+  rightChild: PropTypes.node,
 };
 
 export default Header;

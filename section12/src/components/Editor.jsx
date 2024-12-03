@@ -2,7 +2,8 @@ import "./Editor.css";
 import EmotionItem from "./EmotionItem";
 import Button from "./Button";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { DiaryStateContext } from "../App";
 
 const emotionList = [
   {
@@ -37,10 +38,7 @@ const getStringedDate = (targetDate) => {
   return `${year}-${month}-${date}`;
 };
 
-const Editor = ({ onSubmit }) => {
-  // 동적 경로 이동
-  const navigate = useNavigate();
-
+const Editor = ({ onSubmit, initData }) => {
   // 3개의 입력값을 한꺼번에 상태관리하기
   const [input, setInput] = useState({
     createdDate: new Date(),
@@ -65,6 +63,18 @@ const Editor = ({ onSubmit }) => {
       [name]: value,
     });
   };
+
+  // 동적 경로 이동
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (initData) {
+      setInput({
+        ...initData,
+        createdDate: new Date(Number(initData.createdDate)),
+      });
+    }
+  }, [initData]);
 
   // 일기 데이터 생성 및 추가
   // Editor 컴포넌트는 새 일기 작성 페이지와 기존 일기 수정 페이지 두 군데서 모두 쓰이므로, 작성완료 버튼을 눌렀을 때 페이지에 따라 동작이 달라져야 한다(2가지). 이 함수가 하는 일은 어디서나 똑같이 부모가 만든 onSubmit 함수를 호출하게 하고, 각 부모가 onSubmit 함수를 다른 동작을 하도록 정의하면 된다.

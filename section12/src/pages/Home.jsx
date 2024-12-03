@@ -38,8 +38,6 @@ const Home = () => {
 
   let monthlyData = getMonthlyData(pivotDate, data);
 
-  console.log(data);
-
   const onDecreaseMonth = () => {
     setPivotDate(new Date(pivotDate.getFullYear(), pivotDate.getMonth() - 1));
   };

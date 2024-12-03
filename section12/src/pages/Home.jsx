@@ -3,6 +3,7 @@ import Button from "../components/Button";
 import DiaryList from "../components/DiaryList";
 import { useContext, useState } from "react";
 import { DiaryStateContext } from "../App";
+import { useLocation } from "react-router-dom";
 
 const getMonthlyData = (pivotDate, data) => {
   // 이번달의 시작 시간으로 date 객체 생성 후 time stamp로 변경
@@ -35,7 +36,9 @@ const Home = () => {
   const data = useContext(DiaryStateContext);
   const [pivotDate, setPivotDate] = useState(new Date());
 
-  const monthlyData = getMonthlyData(pivotDate, data);
+  let monthlyData = getMonthlyData(pivotDate, data);
+
+  console.log(data);
 
   const onDecreaseMonth = () => {
     setPivotDate(new Date(pivotDate.getFullYear(), pivotDate.getMonth() - 1));

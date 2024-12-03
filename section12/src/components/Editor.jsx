@@ -4,29 +4,7 @@ import Button from "./Button";
 import { useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { DiaryStateContext } from "../App";
-
-const emotionList = [
-  {
-    emotionId: 1,
-    emotionName: "완전 좋음",
-  },
-  {
-    emotionId: 2,
-    emotionName: "좋음",
-  },
-  {
-    emotionId: 3,
-    emotionName: "그럭저럭",
-  },
-  {
-    emotionId: 4,
-    emotionName: "나쁨",
-  },
-  {
-    emotionId: 5,
-    emotionName: "끔찍함",
-  },
-];
+import { emotionList } from "../util/constants";
 
 // 날짜 : 'YYYY-MM-DD' 형태로 변환
 // 날짜를 선택했을 때 e.target.value로 날짜를 변경하면 화면에 출력은 되지만, 초기값을 출력하려면 이런 변환 함수가 필요하다.

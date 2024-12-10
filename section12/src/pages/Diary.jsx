@@ -4,9 +4,12 @@ import Viewer from "../components/Viewer";
 import { getStringedDate } from "../util/get-stringed-date";
 import useDiary from "../hooks/useDiary";
 import { useNavigate, useParams } from "react-router-dom";
+import usePageTitle from "../hooks/usePageTitle";
 
 const Diary = () => {
   const params = useParams();
+  // 페이지 타이틀 변경
+  usePageTitle(`${params.id}번 일기`);
   const navigate = useNavigate();
   const currentDiaryItem = useDiary(params.id);
 

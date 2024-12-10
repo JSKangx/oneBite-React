@@ -4,6 +4,7 @@ import DiaryList from "../components/DiaryList";
 import { useContext, useState } from "react";
 import { DiaryStateContext } from "../App";
 import { useLocation } from "react-router-dom";
+import usePageTitle from "../hooks/usePageTitle";
 
 const getMonthlyData = (pivotDate, data) => {
   // 이번달의 시작 시간으로 date 객체 생성 후 time stamp로 변경
@@ -35,6 +36,8 @@ const getMonthlyData = (pivotDate, data) => {
 const Home = () => {
   const data = useContext(DiaryStateContext);
   const [pivotDate, setPivotDate] = useState(new Date());
+  // 페이지 타이틀 변경
+  usePageTitle(`감정 일기장`);
 
   let monthlyData = getMonthlyData(pivotDate, data);
 
